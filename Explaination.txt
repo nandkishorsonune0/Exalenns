@@ -1,0 +1,24 @@
+This function takes in two arguments: 
+an array of objects called blocks and an array of strings called reqs. 
+It returns an integer representing the index of the block that is the 
+best fit for the requirements given in reqs.
+
+The first two lines of the function initialize the variables optimalBlock and minMaxDistance.
+ optimalBlock will be used to store the index of the optimal block, and minMaxDistance will 
+ be used to store the minimum maximum distance from a block to the nearest block satisfying 
+ each requirement.
+
+The next four lines create an auxiliary 2D array called distances which will be used to store 
+the distances from each block to the nearest block satisfying each requirement.
+ The distances array is initialized to have the same size as blocks, 
+ and each element is initialized to an array filled with the value Infinity.
+
+The next block of code is a nested loop which calculates the distances 
+in a single pass through the blocks array. The outermost loop iterates 
+over the indices of the blocks array. The second loop iterates over the 
+elements of the reqs array. If the current block (blocks[i]) satisfies the 
+current requirement (reqs[j]), then the distance is set to 0. If the current 
+block does not satisfy the requirement, then a third loop iterates 
+over the blocks array again to find the nearest block satisfying the requirement. 
+If a block satisfying the requirement is found, the distance is updated to the absolute 
+difference between the indices.
